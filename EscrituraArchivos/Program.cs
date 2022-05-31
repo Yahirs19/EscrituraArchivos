@@ -17,12 +17,14 @@ namespace EscrituraArchivos
             // Si el archivo no existe lo creara
             // Si ya existe, escribira en el 
             // true es para agregar y no para sobre escribir 
-            string[] linea =
+            Console.Write("Cuantos nombres desea escribir en el archivo: ");
+            int j = int.Parse(Console.ReadLine());
+            string[] linea = new string[j];
+            for (int i = 0; i < linea.Length; i++)
             {
-                "Esta es la informacion de la primera linea",
-                "Esta es la segunda linea ",
-                "Fin del texto"
-            };
+                Console.Write("Indique un nombre: ");
+                linea[i] = Console.ReadLine();
+            }
             foreach (string line in linea)
             {
                 sw.WriteLine(line);
@@ -31,10 +33,7 @@ namespace EscrituraArchivos
 
             Console.WriteLine("Escribiendo en el archivo. . .");
             Console.ReadLine();
-             for (int i = 0; i < linea.Length; i++) 
-             {
-            Console.WriteLine(linea[i]);
-           }
+             
         }
     }
 }
